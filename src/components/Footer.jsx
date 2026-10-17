@@ -98,12 +98,6 @@ function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/918401226123" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-[#F2B21B] transition-colors">
-                  <MessageCircle className="w-[17px] h-[17px] mt-1 shrink-0 text-[#F2B21B]" strokeWidth={1.75} />
-                  <span>WhatsApp 8401226123</span>
-                </a>
-              </li>
-              <li>
                 <a href="mailto:infokailvarn@gmail.com" className="flex items-start gap-3 hover:text-[#F2B21B] transition-colors break-all">
                   <Mail className="w-[17px] h-[17px] mt-1 shrink-0 text-[#F2B21B]" strokeWidth={1.75} />
                   <span>infokailvarn@gmail.com</span>
