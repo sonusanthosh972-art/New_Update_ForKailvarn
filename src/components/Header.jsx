@@ -106,7 +106,7 @@ function Header() {
 
           <div className="hidden lg:flex items-center gap-6">
             <a
-              href="tel:+918460150027"
+              href="tel:+918401226123"
               className="flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-[0.12em] text-white hover:text-[#F2B21B] transition-colors"
             >
               <Phone className="w-4 h-4 text-[#F2B21B]" strokeWidth={1.75} />
@@ -168,7 +168,7 @@ function Header() {
               </nav>
 
               <div className="flex flex-col gap-3 pt-10">
-                <a href="tel:+918460150027" className="btn-outline w-full">
+                <a href="tel:+918401226123" className="btn-outline w-full">
                   <Phone className="w-4 h-4" strokeWidth={1.75} /> Call Now
                 </a>
                 <Link href="/get-free-quote" className="btn-primary w-full">

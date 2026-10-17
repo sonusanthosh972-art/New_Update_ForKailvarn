@@ -33,7 +33,7 @@ Buttons: 8px radius, gold bg + navy text, hover lift 2px. No pill buttons.
 - The 200-design dataset (titles, categories, descriptions, images, `arSlug`)
 - Enquiry form → WhatsApp prefilled message behavior
 - Promo banner: always present, dismiss persists per tab (`sessionStorage`)
-- Contact data: 8401226123 · wa.me/918401226123 · kailvarn0@gmail.com · Silvassa/Vapi/50km · Mon–Sat 9–7
+- Contact data: 8401226123 · wa.me/918401226123 · infokailvarn@gmail.com · Silvassa/Vapi/50km · Mon–Sat 9–7
 - Testimonials: the 6 real client quotes (kept verbatim, Hinglish as on the live site)
 
 ## Deliberately omitted

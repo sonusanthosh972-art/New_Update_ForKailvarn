@@ -57,7 +57,7 @@ export async function POST(request) {
 
   if (isDailyCapReached('chat', 5000)) {
     return NextResponse.json(
-      { error: 'The assistant has reached its daily limit. Please call/WhatsApp 8460150027.' },
+      { error: 'The assistant has reached its daily limit. Please call/WhatsApp 8401226123.' },
       { status: 503 }
     );
   }
@@ -92,7 +92,7 @@ export async function POST(request) {
     if (result.status && result.status < 500 && result.status !== 429) break; // bad key/request: other models won't help
   }
   return NextResponse.json(
-    { error: 'The assistant is busy right now. Please try again in a minute, or call/WhatsApp 8460150027.' },
+    { error: 'The assistant is busy right now. Please try again in a minute, or call/WhatsApp 8401226123.' },
     { status: 503 }
   );
 }

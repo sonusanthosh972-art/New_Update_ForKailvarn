@@ -27,7 +27,7 @@ export const FAQS = [{
   a: "Absolutely! You don't have to take all services. If you only need painting, or only want a modular kitchen, or only need custom furniture — KailVarn handles single-service projects too. Each service is available independently."
 }, {
   q: "What is the process to get started?",
-  a: "(1) Call or fill the form to book a free consultation. (2) We do a site visit and understand your requirements. (3) We create a 3D design at zero cost. (4) We share a detailed cost estimate. (5) You approve design and cost, we sign an agreement. (6) Work begins. You can start the process in 5 minutes by calling 8460150027 or clicking 'Get Free Quote.'"
+  a: "(1) Call or fill the form to book a free consultation. (2) We do a site visit and understand your requirements. (3) We create a 3D design at zero cost. (4) We share a detailed cost estimate. (5) You approve design and cost, we sign an agreement. (6) Work begins. You can start the process in 5 minutes by calling 8401226123 or clicking 'Get Free Quote.'"
 }, {
   q: "Do you work on commercial spaces like offices, cafés, and shops?",
   a: "Yes! KailVarn designs and executes commercial interiors for offices, cafés, restaurants, retail shops, showrooms, clinics, and other commercial spaces. Our team understandsboth residential and commercial requirements. Check our design portfolio for commercial interior examples."

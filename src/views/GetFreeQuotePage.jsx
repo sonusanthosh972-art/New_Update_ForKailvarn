@@ -95,17 +95,17 @@ function GetFreeQuotePage() {
                 <h4 className="font-playfair text-[21px] leading-tight">Still have questions?</h4>
                 <p className="mt-1 font-nunito text-[13.5px] text-white/65">Talk to our team, Mon–Sat, 9 AM – 7 PM.</p>
                 <div className="mt-5 flex flex-col gap-2.5">
-                  <a href="tel:8460150027" className="group flex min-h-[60px] items-center gap-3.5 rounded-lg border border-white/12 bg-white/[0.04] px-3.5 py-2.5 transition-colors hover:border-[#F2B21B]/60 hover:bg-white/[0.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F2B21B]">
+                  <a href="tel:8401226123" className="group flex min-h-[60px] items-center gap-3.5 rounded-lg border border-white/12 bg-white/[0.04] px-3.5 py-2.5 transition-colors hover:border-[#F2B21B]/60 hover:bg-white/[0.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F2B21B]">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F2B21B] text-[#0B103B]">
                       <Phone className="h-[18px] w-[18px]" strokeWidth={2} aria-hidden="true" />
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block font-nunito text-[12px] font-bold uppercase tracking-[0.12em] text-white/55">Call us</span>
-                      <span className="block font-nunito text-[16px] font-bold tabular-nums tracking-[0.02em] text-white">84601 50027</span>
+                      <span className="block font-nunito text-[16px] font-bold tabular-nums tracking-[0.02em] text-white">84012 26123</span>
                     </span>
                     <ArrowRight className="h-4 w-4 shrink-0 text-white/40 transition-[transform,color] group-hover:translate-x-0.5 group-hover:text-[#F2B21B]" aria-hidden="true" />
                   </a>
-                  <a href="https://wa.me/918460150027?text=Hi%20KailVarn%2C%20I%20have%20a%20question%20about%20my%20interior%20estimate." target="_blank" rel="noreferrer" className="group flex min-h-[60px] items-center gap-3.5 rounded-lg border border-white/12 bg-white/[0.04] px-3.5 py-2.5 transition-colors hover:border-[#25D366]/70 hover:bg-white/[0.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
+                  <a href="https://wa.me/918401226123?text=Hi%20KailVarn%2C%20I%20have%20a%20question%20about%20my%20interior%20estimate." target="_blank" rel="noreferrer" className="group flex min-h-[60px] items-center gap-3.5 rounded-lg border border-white/12 bg-white/[0.04] px-3.5 py-2.5 transition-colors hover:border-[#25D366]/70 hover:bg-white/[0.08] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
                       <WhatsAppIcon className="h-5 w-5" />
                     </span>
@@ -181,9 +181,9 @@ function GetFreeQuotePage() {
                 <Phone className="w-[28px] h-[28px] text-[#D9A441]" />
               </div>
               <h4 className="font-nunito font-bold text-[18px] text-[#111111] mb-1">Call Us Directly</h4>
-              <a href="tel:8460150027" className="block font-playfair font-bold text-[24px] text-[#8A6A1C] mb-2 hover:underline">8460150027</a>
+              <a href="tel:8401226123" className="block font-playfair font-bold text-[24px] text-[#8A6A1C] mb-2 hover:underline">8401226123</a>
               <p className="font-nunito text-[14px] text-[#57534C] mb-6">Mon–Sat, 9 AM – 7 PM</p>
-              <a href="tel:8460150027" className="btn-primary w-full">
+              <a href="tel:8401226123" className="btn-primary w-full">
                 📞 Tap to Call
               </a>
             </motion.div>
@@ -194,9 +194,9 @@ function GetFreeQuotePage() {
                 <MessageCircleIcon className="w-[28px] h-[28px] text-[#25D366]" />
               </div>
               <h4 className="font-nunito font-bold text-[18px] text-[#111111] mb-1">WhatsApp Us</h4>
-              <a href="https://wa.me/918460150027" target="_blank" rel="noreferrer" className="block font-playfair font-bold text-[24px] text-[#25D366] mb-2 hover:underline">8460150027</a>
+              <a href="https://wa.me/918401226123" target="_blank" rel="noreferrer" className="block font-playfair font-bold text-[24px] text-[#25D366] mb-2 hover:underline">8401226123</a>
               <p className="font-nunito text-[14px] text-[#57534C] mb-6">Quick response guaranteed</p>
-              <a href="https://wa.me/918460150027?text=Hi KailVarn, I'd like a free interior quote." target="_blank" rel="noreferrer" className="kv-btn w-full bg-[#25D366] hover:bg-[#1FB457] text-white">
+              <a href="https://wa.me/918401226123?text=Hi KailVarn, I'd like a free interior quote." target="_blank" rel="noreferrer" className="kv-btn w-full bg-[#25D366] hover:bg-[#1FB457] text-white">
                 💬 Chat on WhatsApp
               </a>
             </motion.div>
@@ -207,9 +207,9 @@ function GetFreeQuotePage() {
                 <Mail className="w-[28px] h-[28px] text-[#0B103B]" />
               </div>
               <h4 className="font-nunito font-bold text-[18px] text-[#111111] mb-1">Email Us</h4>
-              <a href="mailto:kailvarn0@gmail.com" className="block font-playfair font-bold text-[20px] text-[#0B103B] mb-2 hover:underline truncate">kailvarn0@gmail.com</a>
+              <a href="mailto:infokailvarn@gmail.com" className="block font-playfair font-bold text-[20px] text-[#0B103B] mb-2 hover:underline truncate">infokailvarn@gmail.com</a>
               <p className="font-nunito text-[14px] text-[#57534C] mb-6">Response within 24 hours</p>
-              <a href="mailto:kailvarn0@gmail.com" className="btn-outline-dark w-full">
+              <a href="mailto:infokailvarn@gmail.com" className="btn-outline-dark w-full">
                 ✉️ Send Email
               </a>
             </motion.div>

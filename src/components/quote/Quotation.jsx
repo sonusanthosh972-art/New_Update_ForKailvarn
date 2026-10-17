@@ -94,11 +94,11 @@ export default function Quotation({ subtitle, quoteNo, customer, items, totals, 
               <div className="mt-3.5 space-y-1.5 font-nunito text-[12.5px] text-[#2A2A2A]">
                 <div className="flex items-center gap-2">
                   <Phone className="h-3.5 w-3.5 text-[#D9A441]" />
-                  <span>Phone / WhatsApp: +91 84601 50027</span>
+                  <span>Phone / WhatsApp: +91 84012 26123</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-3.5 w-3.5 text-[#D9A441]" />
-                  <span>kailvarn0@gmail.com</span>
+                  <span>infokailvarn@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-3.5 w-3.5 text-[#D9A441]" />

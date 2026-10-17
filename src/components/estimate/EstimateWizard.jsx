@@ -26,7 +26,7 @@ const STEPS = ['Home', 'Location', 'Rooms', 'Package', 'Details'];
 const ROOM_ICONS = { kitchen: CookingPot, wardrobe: DoorClosed, bed: BedDouble, tvUnit: Tv, crockery: UtensilsCrossed, study: BookOpen, pooja: Flower2 };
 const ADD_ON_ICONS = { falseCeiling: Lightbulb, painting: PaintRoller };
 const STATUS_ICONS = { new: KeyRound, renovation: Hammer };
-const WHATSAPP_NUMBER = '918460150027';
+const WHATSAPP_NUMBER = '918401226123';
 
 // onQuoteShown(true|false): tells the page when the quotation is on screen,
 // so it can give it the full width.
@@ -305,12 +305,12 @@ function ContactStep({ selection, onBack, onDone }) {
       const json = await res.json().catch(() => null);
       if (!res.ok || !json?.ok) {
         const fields = json?.error?.fields;
-        setError((fields && Object.values(fields)[0]) || json?.error?.message || 'We could not create your estimate. Please try again, or call/WhatsApp 8460150027.');
+        setError((fields && Object.values(fields)[0]) || json?.error?.message || 'We could not create your estimate. Please try again, or call/WhatsApp 8401226123.');
         return;
       }
       onDone({ ...json.data, contact });
     } catch {
-      setError('No internet connection? Please try again, or call/WhatsApp 8460150027.');
+      setError('No internet connection? Please try again, or call/WhatsApp 8401226123.');
     }
   };
 

@@ -76,7 +76,7 @@ function ContactUsPage() {
     a: "Absolutely! You don't have to take all services. If you only need painting, or only want a modular kitchen, or only need custom furniture — KailVarn handles single-service projects too. Each service is available independently."
   }, {
     q: "What is the process to get started?",
-    a: "(1) Call or fill the form to book a free consultation. (2) We do a site visit and understand your requirements. (3) We create a 3D design at zero cost. (4) We share a detailed cost estimate. (5) You approve design and cost, we sign an agreement. (6) Work begins. You can start the process in 5 minutes by calling 8460150027 or clicking 'Get Free Quote.'"
+    a: "(1) Call or fill the form to book a free consultation. (2) We do a site visit and understand your requirements. (3) We create a 3D design at zero cost. (4) We share a detailed cost estimate. (5) You approve design and cost, we sign an agreement. (6) Work begins. You can start the process in 5 minutes by calling 8401226123 or clicking 'Get Free Quote.'"
   }, {
     q: "Do you work on commercial spaces like offices, cafés, and shops?",
     a: "Yes! KailVarn designs and executes commercial interiors for offices, cafés, restaurants, retail shops, showrooms, clinics, and other commercial spaces. Our team understandsboth residential and commercial requirements. Check our design portfolio for commercial interior examples."
@@ -84,21 +84,21 @@ function ContactUsPage() {
   const contactItems = [{
     icon: Phone,
     label: "CALL US",
-    value: "8460150027",
+    value: "8401226123",
     note: "Mon–Sat, 9 AM – 7 PM",
-    link: "tel:+918460150027"
+    link: "tel:+918401226123"
   }, {
     icon: Phone,
     label: "WHATSAPP",
-    value: "8460150027",
+    value: "8401226123",
     note: "Quick response on WhatsApp",
-    link: "https://wa.me/918460150027?text=Hi KailVarn, I want to enquire about interior services."
+    link: "https://wa.me/918401226123?text=Hi KailVarn, I want to enquire about interior services."
   }, {
     icon: Mail,
     label: "EMAIL",
-    value: "kailvarn0@gmail.com",
+    value: "infokailvarn@gmail.com",
     note: "We respond within 24 hours",
-    link: "mailto:kailvarn0@gmail.com"
+    link: "mailto:infokailvarn@gmail.com"
   }, {
     icon: MapPin,
     label: "SERVICE AREAS",
@@ -188,10 +188,10 @@ function ContactUsPage() {
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <a href="tel:+918460150027" className="btn-primary w-full">
+                  <a href="tel:+918401226123" className="btn-primary w-full">
                     <Phone className="w-[18px] h-[18px]" /> Call Now
                   </a>
-                  <a href="https://wa.me/918460150027" target="_blank" rel="noreferrer" className="kv-btn w-full bg-[#25D366] hover:bg-[#1FB457] text-white">
+                  <a href="https://wa.me/918401226123" target="_blank" rel="noreferrer" className="kv-btn w-full bg-[#25D366] hover:bg-[#1FB457] text-white">
                     <MessageCircle className="w-[18px] h-[18px]" /> WhatsApp Now
                   </a>
                 </div>
@@ -249,7 +249,7 @@ function ContactUsPage() {
                             <span className="absolute left-4 top-1/2 -translate-y-1/2 font-nunito text-[15px] text-[#57534C] flex items-center gap-1.5">
                               +91 |
                             </span>
-                            <input type="tel" inputMode="numeric" autoComplete="tel-national" placeholder="e.g. 8460150027" id="ct-phone" {...register("phone", {
+                            <input type="tel" inputMode="numeric" autoComplete="tel-national" placeholder="e.g. 8401226123" id="ct-phone" {...register("phone", {
                           required: "Phone number is required",
                           pattern: {
                             value: /^[6-9]\d{9}$/,
@@ -263,7 +263,7 @@ function ContactUsPage() {
                         {/* Email */}
                         <div>
                           <label className="block font-nunito font-semibold text-[13.5px] text-[#2A2A2A] mb-[7px]" htmlFor="ct-email">Email Address</label>
-                          <input type="email" placeholder="e.g. kailvarn0@gmail.com" id="ct-email" {...register("email", {
+                          <input type="email" placeholder="e.g. infokailvarn@gmail.com" id="ct-email" {...register("email", {
                         pattern: {
                           value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                           message: "Please enter a valid email address"
@@ -349,7 +349,7 @@ function ContactUsPage() {
                       <p className="font-nunito text-[16px] text-[#57534C] mb-8 max-w-[300px] leading-relaxed">
                         Thank you for reaching out! Our team will call or WhatsApp you within a few hours to discuss your project.
                       </p>
-                      <a href="https://wa.me/918460150027" target="_blank" rel="noreferrer" className="kv-btn bg-[#25D366] hover:bg-[#1FB457] text-white">
+                      <a href="https://wa.me/918401226123" target="_blank" rel="noreferrer" className="kv-btn bg-[#25D366] hover:bg-[#1FB457] text-white">
                         <MessageCircleIcon className="w-5 h-5" /> WhatsApp Us for Faster Reply
                       </a>
                     </motion.div>}
@@ -447,10 +447,10 @@ function ContactUsPage() {
               The best way to understand your project needs is a quick 10-minute conversation. Call us, WhatsApp us, or book a free site visit.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-              <a href="tel:+918460150027" className="btn-outline w-full sm:w-auto">
-                <Phone className="w-[18px] h-[18px]" /> Call 8460150027
+              <a href="tel:+918401226123" className="btn-outline w-full sm:w-auto">
+                <Phone className="w-[18px] h-[18px]" /> Call 8401226123
               </a>
-              <a href="https://wa.me/918460150027?text=Hi KailVarn, I want to enquire about interior services" target="_blank" rel="noreferrer" className="kv-btn w-full sm:w-auto bg-[#25D366] hover:bg-[#1FB457] text-white">
+              <a href="https://wa.me/918401226123?text=Hi KailVarn, I want to enquire about interior services" target="_blank" rel="noreferrer" className="kv-btn w-full sm:w-auto bg-[#25D366] hover:bg-[#1FB457] text-white">
                 <MessageCircleIcon className="w-[18px] h-[18px]" /> WhatsApp Now
               </a>
               <Link href="/book-consultation" className="btn-primary w-full sm:w-auto">

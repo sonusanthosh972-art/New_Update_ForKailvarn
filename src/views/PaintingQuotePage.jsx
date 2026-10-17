@@ -127,11 +127,11 @@ export default function PaintingQuotePage() {
               <div className="rounded-lg border border-[#0B103B]/10 bg-[#F5F1E8] p-5">
                 <p className="font-nunito text-[15px] font-bold text-[#111111]">Rather talk to us?</p>
                 <div className="mt-3 flex flex-col gap-1">
-                  <a href="tel:8460150027" className="inline-flex min-h-[40px] items-center gap-2 font-nunito text-[15px] font-bold text-[#8A6A1C] hover:underline">
-                    <Phone className="h-4 w-4" aria-hidden="true" /> Call 8460150027
+                  <a href="tel:8401226123" className="inline-flex min-h-[40px] items-center gap-2 font-nunito text-[15px] font-bold text-[#8A6A1C] hover:underline">
+                    <Phone className="h-4 w-4" aria-hidden="true" /> Call 8401226123
                   </a>
                   <a
-                    href={`https://wa.me/918460150027?text=${encodeURIComponent(`Hi KailVarn! I'd like a painting quote${offer ? ` with the ${promo.title} ${promo.discount}% offer` : ''}.`)}`}
+                    href={`https://wa.me/918401226123?text=${encodeURIComponent(`Hi KailVarn! I'd like a painting quote${offer ? ` with the ${promo.title} ${promo.discount}% offer` : ''}.`)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex min-h-[40px] items-center gap-2 font-nunito text-[15px] font-bold text-[#1A8F47] hover:underline"

@@ -456,11 +456,11 @@ function AboutUsPage() {
                 <strong className="text-[#0B103B]">Not sure whether we serve your location?</strong> Call or WhatsApp us — we&apos;ll be happy to check.
               </p>
               <div className="flex flex-wrap items-center gap-3.5">
-                <a href="tel:8460150027" className="btn-primary">
-                  <Phone aria-hidden="true" className="w-4 h-4" /> Call 8460150027
+                <a href="tel:8401226123" className="btn-primary">
+                  <Phone aria-hidden="true" className="w-4 h-4" /> Call 8401226123
                 </a>
                 <a
-                  href="https://wa.me/918460150027?text=Hi%20KailVarn%2C%20I%20would%20like%20to%20check%20if%20you%20serve%20my%20location."
+                  href="https://wa.me/918401226123?text=Hi%20KailVarn%2C%20I%20would%20like%20to%20check%20if%20you%20serve%20my%20location."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-dark inline-flex items-center gap-2"
@@ -506,8 +506,8 @@ function AboutUsPage() {
               <Link href="/book-consultation" className="btn-primary">
                 Book Free Consultation
               </Link>
-              <a href="tel:8460150027" className="btn-outline inline-flex items-center justify-center gap-2">
-                <Phone aria-hidden="true" className="w-4 h-4"/> Call 8460150027
+              <a href="tel:8401226123" className="btn-outline inline-flex items-center justify-center gap-2">
+                <Phone aria-hidden="true" className="w-4 h-4"/> Call 8401226123
               </a>
             </div>
           </motion.div>

@@ -3,9 +3,9 @@ import nodemailer from 'nodemailer';
 
 // Outgoing email over SMTP. Configure in .env.local / Vercel env:
 //   SMTP_HOST=smtp.gmail.com  SMTP_PORT=465
-//   SMTP_USER=kailvarn0@gmail.com  SMTP_PASS=<Gmail app password>
-//   MAIL_FROM="KailVarn <kailvarn0@gmail.com>"   (optional, defaults to SMTP_USER)
-//   LEADS_NOTIFY_EMAIL=kailvarn0@gmail.com       (optional, team copy of each lead)
+//   SMTP_USER=infokailvarn@gmail.com  SMTP_PASS=<Gmail app password>
+//   MAIL_FROM="KailVarn <infokailvarn@gmail.com>"   (optional, defaults to SMTP_USER)
+//   LEADS_NOTIFY_EMAIL=infokailvarn@gmail.com       (optional, team copy of each lead)
 // Without SMTP_HOST/USER/PASS nothing is sent and sendMail() returns false,
 // so forms keep working before email is set up.
 

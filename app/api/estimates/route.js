@@ -13,7 +13,7 @@ import { BUSINESS } from '@/lib/seo.js';
 // the customer and the team, and returns it for the results screen.
 export async function POST(request) {
   if (rateLimit(request, { key: 'form:estimates', max: 5, windowMs: 10 * 60 * 1000 })) {
-    return fail('Too many requests. Please try again in a few minutes, or call/WhatsApp 8460150027.', 429);
+    return fail('Too many requests. Please try again in a few minutes, or call/WhatsApp 8401226123.', 429);
   }
   const body = await readJson(request);
   // Honeypot field: real visitors never fill it (hidden in the form).

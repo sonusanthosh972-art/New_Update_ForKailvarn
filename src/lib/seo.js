@@ -7,8 +7,8 @@ import { siteUrl } from '@/server/siteUrl.js';
 export const SITE_NAME = 'KailVarn';
 
 export const BUSINESS = {
-  phone: '+91-8460150027',
-  email: 'kailvarn0@gmail.com',
+  phone: '+91-8401226123',
+  email: 'infokailvarn@gmail.com',
   areas: ['Silvassa', 'Vapi', 'Daman', 'Nani Daman', 'Bhilad', 'Kachigam', 'Surangi', 'Dunetha'],
   description:
     'KailVarn is an interior design and execution company serving Silvassa, Vapi, Daman and nearby areas. One team handles free 3D design, full home interiors, modular kitchens, custom furniture and painting, with a written price agreed before work starts.',

@@ -118,7 +118,7 @@ export default function PaintConsultationPage() {
                         {offer && <> Your <strong className="text-[#0B103B]">{promo.discount}% {promo.title} discount</strong> is noted.</>}
                       </p>
                       <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-                        <a href={`https://wa.me/918460150027?text=${encodeURIComponent(`Hi KailVarn, I just booked a paint consultation. My name is ${sent.name}.`)}`} target="_blank" rel="noreferrer" className="kv-btn bg-[#25D366] text-white hover:bg-[#1FB457]">
+                        <a href={`https://wa.me/918401226123?text=${encodeURIComponent(`Hi KailVarn, I just booked a paint consultation. My name is ${sent.name}.`)}`} target="_blank" rel="noreferrer" className="kv-btn bg-[#25D366] text-white hover:bg-[#1FB457]">
                           <MessageCircle className="h-[18px] w-[18px]" aria-hidden="true" /> Say hi on WhatsApp
                         </a>
                         <Link href={DIWALI_OFFER.visualizerPath} className="btn-outline-dark">

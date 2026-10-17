@@ -273,7 +273,7 @@ function BookConsultationPage() {
                       </ul>
                     </div>
 
-                    <a href={`https://wa.me/918460150027?text=Hi, I just booked a consultation. My name is ${submittedData.name}.`} target="_blank" rel="noreferrer" className="kv-btn w-full sm:w-auto bg-[#25D366] hover:bg-[#1FB457] text-white">
+                    <a href={`https://wa.me/918401226123?text=Hi, I just booked a consultation. My name is ${submittedData.name}.`} target="_blank" rel="noreferrer" className="kv-btn w-full sm:w-auto bg-[#25D366] hover:bg-[#1FB457] text-white">
                       <MessageCircle className="w-5 h-5" /> Say Hi on WhatsApp
                     </a>
                   </motion.div>}

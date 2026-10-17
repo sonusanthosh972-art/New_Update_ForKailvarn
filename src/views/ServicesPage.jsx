@@ -1028,13 +1028,13 @@ export default function ServicesPage() {
             <Link href="/book-consultation" className="btn-primary w-full sm:w-auto">
               Book Free Consultation
             </Link>
-            <a href="https://wa.me/918460150027" target="_blank" rel="noopener noreferrer" className="kv-btn bg-[#25D366] hover:bg-[#1FB457] text-white w-full sm:w-auto">
+            <a href="https://wa.me/918401226123" target="_blank" rel="noopener noreferrer" className="kv-btn bg-[#25D366] hover:bg-[#1FB457] text-white w-full sm:w-auto">
               <MessageCircle className="w-5 h-5" /> WhatsApp Us Now
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 font-nunito text-[14px] text-white/65 border-t border-white/10 pt-8">
-            <a href="tel:+918460150027" className="flex items-center gap-2 hover:text-[#F2B21B] transition-colors"><Phone className="w-4 h-4" /> 8460150027</a>
-            <a href="mailto:kailvarn0@gmail.com" className="flex items-center gap-2 hover:text-[#F2B21B] transition-colors"><Mail className="w-4 h-4" /> kailvarn0@gmail.com</a>
+            <a href="tel:+918401226123" className="flex items-center gap-2 hover:text-[#F2B21B] transition-colors"><Phone className="w-4 h-4" /> 8401226123</a>
+            <a href="mailto:infokailvarn@gmail.com" className="flex items-center gap-2 hover:text-[#F2B21B] transition-colors"><Mail className="w-4 h-4" /> infokailvarn@gmail.com</a>
             <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Silvassa & Vapi</span>
           </div>
         </div>
