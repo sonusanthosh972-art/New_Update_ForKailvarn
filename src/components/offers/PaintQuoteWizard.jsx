@@ -73,8 +73,11 @@ function rateSpan(sel) {
   return rates.length ? [Math.min(...rates), Math.max(...rates)] : null;
 }
 
-// The estimate: wall painting (area x rate) plus grills & door frames per piece,
-// then the offer discount (pct, 0 when no offer) taken off the subtotal.
+// The estimate: wall painting (area x rate) plus grills & door frames per piece
+// plus a starting price for each extra picked, then the offer discount (pct, 0 when no offer) taken off the subtotal.
+// Interior is at base rate (area x rate).
+// Exterior is at 3/5 of base rate (area x rate x 3/5).
+// Interior + Exterior includes both (Interior + Exterior).
 // Only totals leave this function; the per-sq-ft rate is never shown.
 function quoteOf(sel, pct = 0) {
   const span = rateSpan(sel);
@@ -84,10 +87,35 @@ function quoteOf(sel, pct = 0) {
     .filter((m) => sel.metal[m.id] > 0)
     .map((m) => ({ ...m, count: sel.metal[m.id], amount: sel.metal[m.id] * m.price }));
   const metalTotal = metal.reduce((sum, m) => sum + m.amount, 0);
-  const walls = span.map((rate) => rate * area);
-  const subtotal = walls.map((w) => w + metalTotal);
+  const extras = PAINT_EXTRAS.filter((x) => sel.extras.includes(x.id)).map((x) => ({ ...x, amount: x.price }));
+  const extrasTotal = extras.reduce((sum, x) => sum + x.amount, 0);
+
+  const interiorWalls = span.map((rate) => Math.round(rate * area));
+  const exteriorWalls = span.map((rate) => Math.round((rate * 3 / 5) * area));
+
+  let walls;
+  if (sel.scope === 'exterior') {
+    walls = exteriorWalls;
+  } else if (sel.scope === 'both') {
+    walls = span.map((_, i) => interiorWalls[i] + exteriorWalls[i]);
+  } else {
+    walls = interiorWalls;
+  }
+
+  const subtotal = walls.map((w) => w + metalTotal + extrasTotal);
   const discount = subtotal.map((t) => Math.round((t * pct) / 100));
-  return { area, walls, metal, subtotal, pct, discount, total: subtotal.map((t, i) => t - discount[i]) };
+  return {
+    area,
+    walls,
+    interiorWalls,
+    exteriorWalls,
+    metal,
+    extras,
+    subtotal,
+    pct,
+    discount,
+    total: subtotal.map((t, i) => t - discount[i]),
+  };
 }
 
 // onQuoteShown(true|false): tells the page when the quotation is on screen,
@@ -129,6 +157,7 @@ export default function PaintQuoteWizard({ onQuoteShown }) {
     metalLine && `Grills & door frames: ${metalLine}`,
     sel.extras.length > 0 && `Extras: ${sel.extras.map((id) => label(PAINT_EXTRAS, id)).join(', ')}`,
     sel.timing && `When: ${label(PAINT_TIMING, sel.timing)}`,
+    quote && sel.scope === 'both' && `Scope breakdown: Interior ${money(quote.interiorWalls)} + Exterior ${money(quote.exteriorWalls)}`,
     quote && `Estimated quote: ${money(quote.total)}${quote.pct ? ` (${money(quote.subtotal)} less ${quote.pct}% off)` : ''}`,
   ].filter(Boolean);
 
@@ -882,17 +911,47 @@ const QUOTE_EXCLUDES = ['Ceiling painting', 'Major plaster repairs', 'Dampness o
 function QuoteDocument({ customer, sel, quote }) {
   const promo = usePromo();
   const range = rangesOf(sel.brand).find((r) => r.id === sel.range);
-  const items = [
+  const isBoth = sel.scope === 'both';
+  const isExterior = sel.scope === 'exterior';
+
+  const wallItems = isBoth ? [
     {
-      desc: `${label(PAINT_SCOPES, sel.scope)} painting · ${label(PAINT_HOMES, sel.home)}`,
-      sub: `${paintChoice(sel)} · ${quote.area.toLocaleString('en-IN')} sq ft carpet area${sel.shade ? ` · Shade: ${sel.shade}` : ''}`,
+      desc: `Interior walls painting — ${label(PAINT_HOMES, sel.home)}`,
+      sub: paintChoice(sel),
+      detail: `${quote.area.toLocaleString('en-IN')} sq ft carpet area${sel.shade ? ` · Shade: ${sel.shade}` : ''}`,
+      qty: '1 Job',
+      rate: money(quote.interiorWalls),
+      amount: money(quote.interiorWalls),
+    },
+    {
+      desc: `Exterior walls painting — ${label(PAINT_HOMES, sel.home)}`,
+      sub: paintChoice(sel),
+      detail: 'Outside & balcony walls (3/5 rate basis)',
+      qty: '1 Job',
+      rate: money(quote.exteriorWalls),
+      amount: money(quote.exteriorWalls),
+    },
+  ] : [
+    {
+      desc: `${label(PAINT_SCOPES, sel.scope)} painting — ${label(PAINT_HOMES, sel.home)}`,
+      sub: paintChoice(sel),
+      detail: isExterior
+        ? `${quote.area.toLocaleString('en-IN')} sq ft carpet area (3/5 rate basis)${sel.shade ? ` · Shade: ${sel.shade}` : ''}`
+        : `${quote.area.toLocaleString('en-IN')} sq ft carpet area${sel.shade ? ` · Shade: ${sel.shade}` : ''}`,
       qty: '1 Job',
       rate: money(quote.walls),
       amount: money(quote.walls),
     },
-    ...quote.metal.map((m) => ({ desc: `${m.label} painting`, sub: m.hint, qty: `${m.count} ${m.count > 1 ? 'Nos.' : 'No.'}`, rate: inr(m.price), amount: inr(m.amount) })),
   ];
-  const extras = sel.extras.map((id) => label(PAINT_EXTRAS, id)).filter((x) => !QUOTE_EXCLUDES.includes(x));
+
+  const items = [
+    ...wallItems,
+    ...quote.metal.map((m) => ({ desc: `${m.label} painting`, sub: m.hint, qty: `${m.count} ${m.count > 1 ? 'Nos.' : 'No.'}`, rate: inr(m.price), amount: inr(m.amount) })),
+    ...quote.extras.map((x) => ({ desc: x.label, sub: x.hint, detail: 'Starting price, confirmed after site inspection', qty: '1 Job', rate: inr(x.price), amount: inr(x.amount) })),
+  ];
+  // Picked extras are priced above, so drop the matching "quoted separately" lines.
+  const covered = { damp: 'Dampness or leakage treatment', texture: 'Decorative and texture finishes' };
+  const excludes = QUOTE_EXCLUDES.filter((x) => !sel.extras.some((id) => covered[id] === x));
   return (
     <div className="mt-8">
       <Quotation
@@ -904,14 +963,15 @@ function QuoteDocument({ customer, sel, quote }) {
           subtotal: money(quote.subtotal),
           discount: quote.pct > 0 ? { label: `${promo.title} offer discount (${quote.pct}%)`, amount: money(quote.discount) } : null,
           total: money(quote.total),
+          totalTitle: quote.pct > 0 ? `${promo.title} Discount Amount` : 'Final Price',
           totalLabel: 'Estimated amount',
           savings: quote.pct > 0 ? money(quote.discount) : null,
           words: quote.total[0] === quote.total[1] ? quote.total[0] : 0,
         }}
         sections={[
-          { title: 'Quoted separately', items: [...QUOTE_EXCLUDES, ...extras] },
+          { title: 'Final price verdict', lead: 'Final price', text: 'Confirmed after site inspection, measurement and paint-brand selection.' },
+          { title: 'Quoted separately', items: excludes },
           { title: 'Price basis', text: 'Carpet area is used only to arrive at this initial budget. The final quotation is based on the actual paintable surface area measured at site.' },
-          { title: 'Final price', text: 'Confirmed after site inspection, measurement and final paint-brand selection, and shared with you as a written quotation.' },
         ]}
         notes={[
           { title: 'Scope of work included', items: QUOTE_INCLUDES },

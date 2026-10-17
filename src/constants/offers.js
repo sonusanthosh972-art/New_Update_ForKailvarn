@@ -144,6 +144,40 @@ export const PAINT_BRANDS = [
     ],
   },
   {
+    id: 'birla-opus',
+    label: 'Birla Opus',
+    ranges: [
+      {
+        id: 'style',
+        label: 'Style',
+        tier: 'luxury',
+        rate: 101,
+        examples: 'Style Color Smart, Style Super Bright, Style Super Smooth',
+      },
+      {
+        id: 'safe',
+        label: 'Safe',
+        tier: 'premium',
+        rate: 81,
+        examples: 'Safe low-VOC interior emulsion',
+      },
+      {
+        id: 'one',
+        label: 'One',
+        tier: 'mid',
+        rate: 74,
+        examples: 'One Pure Elegance, One Pure Elegance Shine, One Pure Elegance Matt',
+      },
+      {
+        id: 'ezycoat',
+        label: 'Ezycoat',
+        tier: 'economy',
+        rate: 67,
+        examples: 'Ezycoat interior emulsion',
+      },
+    ],
+  },
+  {
     id: 'berger',
     label: 'Berger',
     ranges: [
@@ -419,40 +453,6 @@ export const PAINT_BRANDS = [
     ],
   },
   {
-    id: 'birla-opus',
-    label: 'Birla Opus',
-    ranges: [
-      {
-        id: 'style',
-        label: 'Style',
-        tier: 'luxury',
-        rate: 101,
-        examples: 'Style Color Smart, Style Super Bright, Style Super Smooth',
-      },
-      {
-        id: 'safe',
-        label: 'Safe',
-        tier: 'premium',
-        rate: 81,
-        examples: 'Safe low-VOC interior emulsion',
-      },
-      {
-        id: 'one',
-        label: 'One',
-        tier: 'mid',
-        rate: 74,
-        examples: 'One Pure Elegance, One Pure Elegance Shine, One Pure Elegance Matt',
-      },
-      {
-        id: 'ezycoat',
-        label: 'Ezycoat',
-        tier: 'economy',
-        rate: 67,
-        examples: 'Ezycoat interior emulsion',
-      },
-    ],
-  },
-  {
     // Undecided: choose by budget instead of a brand's range names. These
     // have no single rate; the quote shows the span of that tier's brand rates.
     id: 'suggest',
@@ -520,12 +520,14 @@ export const PAINT_METAL_WORK = [
   { id: 'grills', label: 'Window grills', hint: 'Rust-proof enamel on window grills', price: 1500 },
 ];
 
+// price: starting amount added to the quote when the extra is picked. Never
+// shown on the extras step, only as a line item on the quotation.
 export const PAINT_EXTRAS = [
-  { id: 'damp', label: 'Damp & seepage treatment', hint: 'Damp patches, peeling or salt marks' },
-  { id: 'putty', label: 'Wall putty & crack repair', hint: 'Smooth walls before painting' },
-  { id: 'texture', label: 'Texture / accent wall', hint: 'A statement wall in living or pooja room' },
-  { id: 'wood', label: 'Wood polish', hint: 'Polish for wooden doors & furniture' },
-  { id: 'terrace', label: 'Terrace waterproofing', hint: 'Stop leaks before the monsoon' },
+  { id: 'damp', label: 'Damp & seepage treatment', hint: 'Damp patches, peeling or salt marks', price: 2500 },
+  { id: 'putty', label: 'Wall putty & crack repair', hint: 'Smooth walls before painting', price: 1500 },
+  { id: 'texture', label: 'Texture / accent wall', hint: 'A statement wall in living or pooja room', price: 2500 },
+  { id: 'wood', label: 'Wood polish', hint: 'Polish for wooden doors & furniture', price: 3000 },
+  { id: 'terrace', label: 'Terrace waterproofing', hint: 'Stop leaks before the monsoon', price: 8000 },
 ];
 export const PAINT_TIMING = [
   { id: 'diwali', label: 'Before the festival', hint: 'Limited festive slots' },

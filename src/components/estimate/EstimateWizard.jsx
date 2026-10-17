@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowLeft, ArrowRight, BedDouble, BookOpen, Building2, CalendarCheck, Check, CookingPot, DoorClosed,
-  Flower2, Hammer, House, KeyRound, Lightbulb, Loader2, Lock, Mail, MapPin, Minus, PaintRoller,
+  Flower2, Gift, Hammer, House, KeyRound, Lightbulb, Loader2, Lock, Mail, MapPin, Minus, PaintRoller,
   Plus, RotateCcw, Tv, UtensilsCrossed,
 } from 'lucide-react';
 import {
@@ -14,6 +14,7 @@ import {
 } from '@/constants/estimateConfig.js';
 import { Field, OptionCard, ProgressBar, StepHeading } from '@/components/estimate/WizardParts.jsx';
 import { defaultAddOns, defaultRooms, estimateSummary, findHome, findPackage, findStatus, formatInr } from '@/lib/estimate.js';
+import { usePromo } from '@/components/offers/PromoProvider.jsx';
 import Quotation, { quotationNo, validUntil } from '@/components/quote/Quotation.jsx';
 
 // Multi-step estimate calculator (DesignCafe / Livspace style):
@@ -431,6 +432,7 @@ const INCLUDED_FREE = ['In-house interior designer', '3D design before work star
 // The estimate as a quotation, for the package being viewed. The number
 // ends with the saved lead's id so the team can find it in Admin -> Quotes.
 function InteriorQuotation({ result, selection, packageId, estimate }) {
+  const promo = usePromo();
   const home = findHome(selection.home);
   const pkg = findPackage(packageId);
   const [quoteNo] = useState(() => quotationNo('IN', result.id));
@@ -443,6 +445,12 @@ function InteriorQuotation({ result, selection, packageId, estimate }) {
       amount: rupeeRange(l.low, l.high),
     };
   });
+
+  const discountLow = promo.active ? Math.round((estimate.low * promo.discount) / 100) : 0;
+  const discountHigh = promo.active ? Math.round((estimate.high * promo.discount) / 100) : 0;
+  const totalLow = estimate.low - discountLow;
+  const totalHigh = estimate.high - discountHigh;
+
   return (
     <Quotation
       subtitle="Interior Estimate"
@@ -454,11 +462,26 @@ function InteriorQuotation({ result, selection, packageId, estimate }) {
         email: result.contact.email.trim(),
       }}
       items={items}
-      totals={{ subtotal: rupeeRange(estimate.low, estimate.high), total: rupeeRange(estimate.low, estimate.high), totalLabel: 'Estimated amount' }}
+      totals={{
+        subtotal: rupeeRange(estimate.low, estimate.high),
+        discount: promo.active ? {
+          label: `${promo.title} offer discount (${promo.discount}%)`,
+          amount: rupeeRange(discountLow, discountHigh),
+        } : null,
+        total: rupeeRange(totalLow, totalHigh),
+        totalLabel: 'Estimated amount',
+        savings: promo.active ? rupeeRange(discountLow, discountHigh) : null,
+      }}
       sections={[
+        {
+          title: 'Final price verdict',
+          text: 'Confirmed after site inspection, measurement and final design selection, and shared with you as a written quotation.',
+        },
+        {
+          title: 'Price basis',
+          text: `Based on typical room sizes for a ${home.label} (${findStatus(selection.status)?.label.toLowerCase()}, about ${home.area.toLocaleString('en-IN')} sq ft carpet area). The final price depends on your exact measurements, design and material choices.`,
+        },
         { title: `${pkg.name} package specification`, items: pkg.features },
-        { title: 'Price basis', text: `Based on typical room sizes for a ${home.label} (${findStatus(selection.status)?.label.toLowerCase()}, about ${home.area.toLocaleString('en-IN')} sq ft carpet area). The final price depends on your exact measurements, design and material choices.` },
-        { title: 'Final price', text: 'Fixed in a written agreement after the free site visit and 3D design, with no hidden costs. GST extra, as applicable.' },
       ]}
       notes={[
         { title: 'Included free with every project', items: INCLUDED_FREE },
@@ -468,10 +491,11 @@ function InteriorQuotation({ result, selection, packageId, estimate }) {
           items: [
             `This quotation is valid until ${validUntil()}.`,
             'Amounts are shown as a range until measurements and materials are finalised.',
+            promo.active && `The ${promo.title} offer of ${promo.discount}% is applicable on bookings confirmed within the offer period.`,
             'GST extra, as applicable.',
             'Any additional work is taken up only with your written approval.',
             'Project timeline is confirmed in the written agreement.',
-          ],
+          ].filter(Boolean),
         },
       ]}
     />
