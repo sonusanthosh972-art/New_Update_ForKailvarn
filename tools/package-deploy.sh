@@ -28,7 +28,7 @@ build_node() {
 
 echo "==> Building (next build, standalone output)"
 rm -rf .next/standalone
-KAILVARN_STANDALONE=1 npx next build
+npx next build
 
 echo "==> Assembling $PKG"
 rm -rf "$PKG" "$OUT/kailvarn-website-node.zip"
@@ -114,7 +114,7 @@ build_static() {
 import sys
 t = sys.argv[1]
 p = f"{t}/next.config.mjs"; s = open(p).read()
-s = s.replace("output: process.env.KAILVARN_STANDALONE === '1' ? 'standalone' : undefined,", "output: 'export',\n  trailingSlash: true,\n  images: { unoptimized: true },\n  turbopack: { root: new URL('..', import.meta.url).pathname },")
+s = s.replace("output: 'standalone',", "output: 'export',\n  trailingSlash: true,\n  images: { unoptimized: true },\n  turbopack: { root: new URL('..', import.meta.url).pathname },")
 open(p, "w").write(s)
 p = f"{t}/app/(site)/layout.jsx"; s = open(p).read()
 s = s.replace("import ChatWidget from '@/components/ChatWidget.jsx';\n", "").replace("      <ChatWidget />\n", "")

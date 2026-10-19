@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // With KAILVARN_STANDALONE=1, `next build` also emits .next/standalone: a
-  // self-contained server.js with only the node_modules it needs, for
-  // uploading to a Node.js host (tools/package-deploy.sh sets it). Off by
-  // default: Hostinger's git deploy switches to that server.js whenever it
-  // sees .next/standalone, and it fails to start there (503); without it
-  // Hostinger runs `npm start`. Has no effect on `next dev`.
-  output: process.env.KAILVARN_STANDALONE === '1' ? 'standalone' : undefined,
+  // `next build` also emits .next/standalone: a self-contained server.js with
+  // only the node_modules it needs, for uploading to a Node.js host (see
+  // tools/package-deploy.sh). Has no effect on `next dev`.
+  output: 'standalone',
   experimental: {
     // proxy.js matches /api/admin/*, and Next buffers request bodies passing
     // through the proxy only up to 10MB by default -- larger walkthrough
