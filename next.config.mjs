@@ -17,8 +17,12 @@ const nextConfig = {
   // process.cwd() path, which makes the tracer copy the whole project into
   // the standalone bundle (dev HTTPS keys, photos, old copies...). It only
   // needs public/, which the deploy package ships anyway — keep the rest out.
+  // Keyed '/**' (routes only), not '*': '*' also matches Next's own
+  // 'next-server' trace, where these globs are applied unanchored and strip
+  // node_modules/next/dist/**/{app,src,tools,docs} -- the standalone
+  // server.js then crashes at startup (Cannot find module), i.e. a 503.
   outputFileTracingExcludes: {
-    '*': [
+    '/**': [
       './certificates/**',
       './deploy/**',
       './.static-build/**',
