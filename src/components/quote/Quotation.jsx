@@ -56,7 +56,11 @@ function getSectionIcon(title) {
   return FileText;
 }
 
-export default function Quotation({ subtitle, quoteNo, customer, items, totals, sections = [], notes = [] }) {
+// tagline / materialsLabel / image default to the painting quotation's.
+export default function Quotation({
+  subtitle, quoteNo, customer, items, totals, sections = [], notes = [],
+  tagline = 'Painting & Interiors · Silvassa & Vapi', materialsLabel = 'Quality Paints', image = '/offers/diwali-living-room-1280.webp',
+}) {
   const showRate = items.some((it) => it.rate);
 
   // Extract verdict / final price section
@@ -79,7 +83,7 @@ export default function Quotation({ subtitle, quoteNo, customer, items, totals, 
           <div
             className="pointer-events-none absolute right-0 top-0 bottom-0 w-1/2 sm:w-2/5 opacity-25 bg-cover bg-right bg-no-repeat"
             style={{
-              backgroundImage: `url('/offers/diwali-living-room-1280.webp')`,
+              backgroundImage: `url('${image}')`,
               maskImage: 'linear-gradient(to left, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0) 100%)',
               WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.9) 25%, rgba(0,0,0,0) 100%)',
             }}
@@ -89,7 +93,7 @@ export default function Quotation({ subtitle, quoteNo, customer, items, totals, 
             <div>
               <img src="/brand/kailvarn-wordmark.png" alt="KailVarn" width={180} height={28} className="h-7 w-auto" />
               <p className="mt-1 font-nunito text-[13px] font-semibold text-[#57534C]">
-                Painting &amp; Interiors · Silvassa &amp; Vapi
+                {tagline}
               </p>
               <div className="mt-3.5 space-y-1.5 font-nunito text-[12.5px] text-[#2A2A2A]">
                 <div className="flex items-center gap-2">
@@ -125,7 +129,7 @@ export default function Quotation({ subtitle, quoteNo, customer, items, totals, 
                 <ShieldCheck className="h-4.5 w-4.5" />
               </div>
               <span className="font-nunito text-[12px] font-bold text-[#0B103B] leading-tight">
-                Quality Paints<br /><span className="font-normal text-[#57534C]">&amp; Materials</span>
+                {materialsLabel}<br /><span className="font-normal text-[#57534C]">&amp; Materials</span>
               </span>
             </div>
             <div className="flex items-center gap-2.5">

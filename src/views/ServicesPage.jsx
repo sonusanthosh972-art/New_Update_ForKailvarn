@@ -541,7 +541,7 @@ export default function ServicesPage() {
                 <Link href="/book-consultation" className="btn-primary">
                   Book Free Consultation
                 </Link>
-                <Link href="/get-free-quote" className="btn-outline-dark">
+                <Link href="/kitchen-quote" className="btn-outline-dark">
                   Get Free Kitchen Quote
                 </Link>
               </div>
@@ -639,8 +639,8 @@ export default function ServicesPage() {
               <Link href="/book-consultation" className="btn-primary whitespace-nowrap">
                 Book Consultation
               </Link>
-              <Link href="/get-free-quote" className="btn-outline whitespace-nowrap">
-                Get Free Quote
+              <Link href="/kitchen-quote" className="btn-outline whitespace-nowrap">
+                Get Kitchen Quote
               </Link>
             </div>
           </div>
@@ -710,8 +710,8 @@ export default function ServicesPage() {
                 <Link href="/book-consultation" className="btn-primary">
                   Book Free Consultation
                 </Link>
-                <Link href="/get-free-quote" className="btn-outline-dark">
-                  Get Free Quote
+                <Link href="/furniture-quote" className="btn-outline-dark">
+                  Get Furniture Quote
                 </Link>
               </div>
             </motion.div>
@@ -835,8 +835,8 @@ export default function ServicesPage() {
               <Link href="/book-consultation" className="btn-primary whitespace-nowrap">
                 Book Consultation
               </Link>
-              <Link href="/get-free-quote" className="btn-outline whitespace-nowrap">
-                Get Free Quote
+              <Link href="/furniture-quote" className="btn-outline whitespace-nowrap">
+                Get Furniture Quote
               </Link>
             </div>
           </div>
